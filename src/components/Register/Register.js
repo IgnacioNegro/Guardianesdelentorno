@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { use, useState } from 'react';
 import './Register.css';
 
 const Register = ({closeModal}) => {
@@ -7,6 +7,7 @@ const Register = ({closeModal}) => {
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [username, setUserName] = useState('');
+    const [resultData, setresultData] = useState('null');
     //const error = [""]
 
     const RegistrarNuevoUsuario = async (event) => {
@@ -30,7 +31,9 @@ const Register = ({closeModal}) => {
             body: JSON.stringify(user),
         })
         const data = await consulta.json();
-        console.log(data);
+        setresultData(data);
+
+        console.log(data.details);
 
     }
 
@@ -38,7 +41,9 @@ const Register = ({closeModal}) => {
         <>
             <div className='register-container'>
                 <form className='form-register' onSubmit={RegistrarNuevoUsuario}>
-                <button className='modal-close' onClick={closeModal}>✖</button>
+                    <button className='modal-close' onClick={closeModal}>✖</button>
+                    {resultData.success == false && <p>- {resultData.details}</p>}
+                    {resultData.result && <p>- Usuario registrado con exito</p>}
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email</label>
                         <input type="email" className="form-control" id="Login-Email" aria-describedby="emailHelp" placeholder="Enter email"

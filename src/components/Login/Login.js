@@ -8,7 +8,7 @@ const Login = ({closeModal}) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');    
-    //const error = [""]
+    const [resultData, setResultData] = useState('null');
 
     const Loguearse = async (event) => {
         console.log("entra al log usuario")
@@ -22,7 +22,8 @@ const Login = ({closeModal}) => {
             body: JSON.stringify({email: email, password: password}),
         })
         const data = await consulta.json();
-        console.log(data);
+        setResultData(data);
+        console.log(data.isValid);
 
     }
 
@@ -30,7 +31,8 @@ const Login = ({closeModal}) => {
         <>
             <div className='register-container'>
                 <form className='form-register' onSubmit={Loguearse}>
-                <button className='modal-close' onClick={closeModal}>✖</button>
+                    <button className='modal-close' onClick={closeModal}>✖</button>
+                    {resultData.isValid == false && <p>- Email o contraseña incorrecto </p>}
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email</label>
                         <input type="email" className="form-control" id="Login-Email" aria-describedby="emailHelp" placeholder="Enter email"
