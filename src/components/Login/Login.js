@@ -54,4 +54,4 @@ const Login = ({closeModal}) => {
     )
 }
 
-export default Login
+export default Login;
