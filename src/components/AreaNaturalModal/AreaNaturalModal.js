@@ -1,17 +1,14 @@
 import { useState } from "react";
 import './AreaNaturalModal.css';
 
-const AreaNaturalModal = ({closeModal}) => {
-
-    const renderizarAreaModal = (event) => {
-        event.preventDefault();
-    }
-
+const AreaNaturalModal = ({closeModal}) => {    
+    console.log(closeModal);
     return (
-        
+        <>
         <div className='register-container'>
             <div className='form-register'>
-                <button className='modal-close' onClick={closeModal}>✖</button>                    
+                <button className='modal-close' onClick={closeModal}>✖</button>  
+                                 
                 <div className="form-group">
                     <img></img>
                     
@@ -33,6 +30,7 @@ const AreaNaturalModal = ({closeModal}) => {
                 
             </div>
         </div>
+        </>
         
     )
 }
