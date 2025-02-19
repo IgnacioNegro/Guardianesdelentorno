@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import './Login.css';
 import '../Register/Register.css';
+import { useDispatch } from 'react-redux';
+
 
 
 const Login = ({closeModal}) => {
@@ -9,7 +11,7 @@ const Login = ({closeModal}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');    
     const [resultData, setResultData] = useState('null');
-
+    const dispatch = useDispatch();
     const Loguearse = async (event) => {
         console.log("entra al log usuario")
         event.preventDefault();         
