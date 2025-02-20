@@ -10,7 +10,9 @@ const Login = ({closeModal}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');    
     const [resultData, setResultData] = useState('null');
+
     const dispatch = useDispatch();
+
     const Loguearse = async (event) => {
         console.log("entra al log usuario")
         event.preventDefault();         
@@ -22,9 +24,11 @@ const Login = ({closeModal}) => {
             },
             body: JSON.stringify({email: email, password: password}),
         })
+
         const data = await consulta.json();
         setResultData(data);
         dispatch(setUser(data.user));
+
         console.log(data.isValid);
 
     }
