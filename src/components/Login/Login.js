@@ -3,8 +3,7 @@ import { useState } from 'react';
 import './Login.css';
 import '../Register/Register.css';
 import { useDispatch } from 'react-redux';
-
-
+import { setUser } from  '../../userSlice';  
 
 const Login = ({closeModal}) => {
 
@@ -25,6 +24,7 @@ const Login = ({closeModal}) => {
         })
         const data = await consulta.json();
         setResultData(data);
+        dispatch(setUser(data.user));
         console.log(data.isValid);
 
     }
