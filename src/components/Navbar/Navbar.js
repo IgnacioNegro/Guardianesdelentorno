@@ -17,6 +17,7 @@ const Navbar = () => {
     }
 
     return (
+        <>
         <div id='Navbar-container'>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
@@ -34,14 +35,17 @@ const Navbar = () => {
                             </li>                                                  
                         </ul>
                         <button type="button" class="btn btn-link" onClick={handleClickLogin}>Loguearse</button>
-                        {registerModalVisibleLogin && <Login closeModal={() => setRegisterModalVisibleLogin(false)}/> } 
+                        {/* {registerModalVisibleLogin && <Login closeModal={() => setRegisterModalVisibleLogin(false)}/> }  */}
 
                         <button type="button" class="btn btn-primary" onClick={handleClickRegister}>Registrarse</button>    
-                        {registerModalVisible && <Register closeModal={() => setRegisterModalVisible(false)}/> }                   
+                        {/* {registerModalVisible && <Register closeModal={() => setRegisterModalVisible(false)}/> }                    */}
                     </div>
                 </div>
             </nav>
         </div>
+        {registerModalVisibleLogin && <Login closeModal={() => setRegisterModalVisibleLogin(false)}/> }
+        {registerModalVisible && <Register closeModal={() => setRegisterModalVisible(false)}/> }
+        </>
     )
 
 };
