@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Especie.css';
 import EspecieModal from '../EspecieModal/EspecieModal';
 
@@ -9,7 +9,7 @@ const Especie = ({especie}) => {
         const handleClickModal = () => {
             setModalVisible(true);
         }
-
+        
     return(
         <>
             <div onClick={handleClickModal} className='area-especie-container container mt-5 d-flex flex-row mx-auto'>

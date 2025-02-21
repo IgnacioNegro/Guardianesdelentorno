@@ -8,9 +8,9 @@ const EspecieModal = ({ closeModal, especie }) => {
                 <div className='form-register'>
                     <button className='modal-close' onClick={closeModal}>✖</button>
 
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <img src={especie.imageUrl} alt="Imagen de la especie" style={{ maxWidth: "100%" }} />
-                    </div>
+                    </div> */}
                     <div className="form-group">
                     <p>Nombre: {especie.commonName}</p>
                     <p>Nombre Cientifico: {especie.scientificName}</p>
