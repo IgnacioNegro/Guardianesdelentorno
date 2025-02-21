@@ -1,17 +1,17 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import './ListaAreas.css';
+import './ListaEspecies.css';
 import AreaNatural from '../AreaNatural/AreaNatural';
 
 
 const ListaAreas = () => {
-    const [arrayAreasNaturales, setArrayAreasNaturales] = useState([]);
+    const [arrayEspecies, setArrayEspecies] = useState([]);
 
     useEffect(() => {
-        const cargarAreas = async () => {           
+        const cargarEspecies = async () => {           
 
-            const response = await fetch('https://mammal-excited-tarpon.ngrok-free.app/api/natural-area/list?secret=TallerReact2025!&Keyword=&AreaType=&Region=&ConservationStatus=&Page=1&PageSize=10',
+            const response = await fetch('https://mammal-excited-tarpon.ngrok-free.app/api/species/list?page=1&pageSize=50',
                 {
                     method: "GET",
                     headers: {
@@ -23,19 +23,19 @@ const ListaAreas = () => {
             
             const data = await response.json();  
             console.log(data.items[0]);         
-            setArrayAreasNaturales(data.items); 
+            setArrayEspecies(data.items); 
         };
 
         // Llamamos a la función dentro del useEffect,
         // para que se ejecute SOLO una vez al montar el componente
-        cargarAreas();
+        cargarEspecies();
     }, []); // Dependencia vacía => se ejecuta al montar, luego usaremos dependencia para que cargue cada vez que se agregue un item a la bd
 
     return (
         <div className='areas-especies-container container mb-5'>
             <h1 className='text-center mt-5'>Lista Areas Naturales</h1>
             {                
-                arrayAreasNaturales.map(area => <AreaNatural key={area.id} area={area}/>)
+                arrayEspecies.map(especie => <Especie key={especie.id} especie={especie}/>)
             }
         </div>
     )
