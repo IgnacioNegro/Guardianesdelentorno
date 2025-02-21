@@ -2,10 +2,10 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import './ListaEspecies.css';
-import AreaNatural from '../AreaNatural/AreaNatural';
+import Especie from '../Especie/Especie';
 
 
-const ListaAreas = () => {
+const ListaEspecies = () => {
     const [arrayEspecies, setArrayEspecies] = useState([]);
 
     useEffect(() => {
@@ -41,4 +41,4 @@ const ListaAreas = () => {
     )
 }
 
-export default ListaAreas;
+export default ListaEspecies;
