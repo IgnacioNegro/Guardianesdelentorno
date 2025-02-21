@@ -12,10 +12,11 @@ const EspecieModal = ({ closeModal, especie }) => {
                         <img src={especie.imageUrl} alt="Imagen de la especie" style={{ maxWidth: "100%" }} />
                     </div>
                     <div className="form-group">
-                        <p>Nombre: {especie.name}</p>
-                        <p>Familia: {especie.family}</p>
-                        <p>Descripción: {especie.description}</p>
-                        <p>Hábitat: {especie.habitat}</p>
+                    <p>Nombre: {especie.commonName}</p>
+                    <p>Nombre Cientifico: {especie.scientificName}</p>
+                    <p>Categoria: {especie.category}</p>                    
+                    <p>Estado: {especie.conservationStatus}</p>
+                    <p>Area Avistada: {especie.naturalAreaId}</p>
                     </div>
                     <div className="form-group">
                         <p>Estado de conservación: {especie.conservationStatus}</p>
