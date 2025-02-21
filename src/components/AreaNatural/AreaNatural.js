@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './AreaNatural.css';
 import AreaNaturalModal from '../AreaNaturalModal/AreaNaturalModal';
 
-const AreaNatural = ({id, imageUrl, nombre, tipo, region, estado}) => { //id, nombre, tipo, region, estado
+const AreaNatural = ({area}) => {
 
         const[modalVisible, setModalVisible] = useState(false);        
     
@@ -14,16 +14,16 @@ const AreaNatural = ({id, imageUrl, nombre, tipo, region, estado}) => { //id, no
         <>
             <div onClick={handleClickModal} className='area-especie-container container mt-5 d-flex flex-row mx-auto'>
                 <div className='thumbnail-container mr-2'>
-                    <img src={imageUrl} className='thumbnail' ></img>
+                    <img src={area.imageUrl} className='thumbnail' ></img>
                 </div>
                 <div>                
-                    <p>Nombre: {nombre}</p>
-                    <p>Tipo: {tipo}</p>
-                    <p>Region: {region}</p>
-                    <p>Estado: {estado}</p>
+                    <p>Nombre: {area.nombre}</p>
+                    <p>Tipo: {area.tipo}</p>
+                    <p>Region: {area.region}</p>
+                    <p>Estado: {area.estado}</p>
                 </div>           
             </div>
-            {modalVisible && (<AreaNaturalModal closeModal={() => setModalVisible(false)}/>)} 
+            {modalVisible && (<AreaNaturalModal area={area} closeModal={() => setModalVisible(false)}/>)} 
         </>
     )
 }

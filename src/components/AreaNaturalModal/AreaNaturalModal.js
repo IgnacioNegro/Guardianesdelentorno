@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './AreaNaturalModal.css';
 
-const AreaNaturalModal = ({closeModal}) => {    
+const AreaNaturalModal = ({closeModal, area}) => {    
     console.log(closeModal);
     return (
         <>
@@ -14,7 +14,7 @@ const AreaNaturalModal = ({closeModal}) => {
                     
                 </div>
                 <div className="form-group">
-                    <p>Nombre:</p>
+                    <p>Nombre: {area.nombre}</p>
                     <p>Tipo:</p>
                     <p>Region:</p>
                     <p>Estado</p>

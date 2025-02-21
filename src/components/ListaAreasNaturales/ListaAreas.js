@@ -35,7 +35,7 @@ const ListaAreas = () => {
         <div className='areas-especies-container container'>
             <h1 className='text-center mt-5'>Lista Areas Naturales</h1>
             {                
-                arrayAreasNaturales.map(area => <AreaNatural key={area.id} id={area.id} imageUrl={area.imageUrl} nombre={area.name} tipo={area.areaType} region={area.location} estado={area.conservationStatus}/>) //id={area.id} nombre={area.name} tipo={area.areaType} region={area.location} estado={area.conservationStatus}
+                arrayAreasNaturales.map(area => <AreaNatural key={area.id} area={area}/>)
             }
         </div>
     )
