@@ -22,6 +22,7 @@ const ListaEspecies = () => {
             );            
             
             const data = await response.json();  
+            console.log("Especes")
             console.log(data.items[0]);         
             setArrayEspecies(data.items); 
         };
@@ -33,7 +34,7 @@ const ListaEspecies = () => {
 
     return (
         <div className='areas-especies-container container mb-5'>
-            <h1 className='text-center mt-5'>Lista Areas Naturales</h1>
+            <h1 className='text-center mt-5'>Lista Especies</h1>
             {                
                 arrayEspecies.map(especie => <Especie key={especie.id} especie={especie}/>)
             }

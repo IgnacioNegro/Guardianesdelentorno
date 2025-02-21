@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Especie.css';
-
+import EspecieModal from '../EspecieModal/EspecieModal';
 
 const Especie = ({especie}) => {
 
@@ -13,13 +13,13 @@ const Especie = ({especie}) => {
     return(
         <>
             <div onClick={handleClickModal} className='area-especie-container container mt-5 d-flex flex-row mx-auto'>
-                <div className='thumbnail-container mr-2'>
+                {/* <div className='thumbnail-container mr-2'>
                     <img src={especie.imageUrl} className='thumbnail' ></img>
-                </div>
+                </div> */}
                 <div>                
-                    <p>Nombre: {especie.name}</p>
-                    <p>Tipo: {especie.areaType}</p>
-                    <p>Region: {especie.region}</p>
+                    <p>Nombre: {especie.commonName}</p>
+                    <p>Nombre Cientifico: {especie.scientificName}</p>
+                    <p>Categoria: {especie.category}</p>                    
                     <p>Estado: {especie.conservationStatus}</p>
                 </div>           
             </div>

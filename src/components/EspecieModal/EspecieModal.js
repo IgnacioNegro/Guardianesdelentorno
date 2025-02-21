@@ -1,5 +1,4 @@
-import { useState } from "react";
-import './especie.css';
+import './EspecieModal.css';
 
 const EspecieModal = ({ closeModal, especie }) => {
     console.log(closeModal);
