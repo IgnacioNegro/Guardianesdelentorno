@@ -17,10 +17,10 @@ const AreaNatural = ({area}) => {
                     <img src={area.imageUrl} className='thumbnail' ></img>
                 </div>
                 <div>                
-                    <p>Nombre: {area.nombre}</p>
-                    <p>Tipo: {area.tipo}</p>
+                    <p>Nombre: {area.name}</p>
+                    <p>Tipo: {area.areaType}</p>
                     <p>Region: {area.region}</p>
-                    <p>Estado: {area.estado}</p>
+                    <p>Estado: {area.conservationStatus}</p>
                 </div>           
             </div>
             {modalVisible && (<AreaNaturalModal area={area} closeModal={() => setModalVisible(false)}/>)} 
