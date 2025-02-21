@@ -14,12 +14,13 @@ const AreaNaturalModal = ({closeModal, area}) => {
                     
                 </div>
                 <div className="form-group">
-                    <p>Nombre: {area.nombre}</p>
-                    <p>Tipo:</p>
-                    <p>Region:</p>
-                    <p>Estado</p>
-                    <p>Descripcion</p>
-                    <p>Ubicacion - mapa</p>
+                    <p>Nombre: {area.name}</p>
+                    <p>Region: {area.region}</p>
+                    <p>Descripcion: {area.description}:</p>
+                    <img src={area.imageUrl} alt="Imagen del área" style={{ maxWidth: "100%" }} />
+                    <p>Ubicacion mapa interactivo:</p>
+                    
+                    
                 </div>
                 <div className="form-group">
                     
