@@ -1,7 +1,7 @@
 import './EspecieModal.css';
 
 const EspecieModal = ({ closeModal, especie, area }) => {
-    console.log(area);
+    //console.log(area);
     return (
         <>
             <div className='register-container'>

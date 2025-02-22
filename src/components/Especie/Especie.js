@@ -9,7 +9,7 @@ const Especie = ({especie, area}) => {
         const handleClickModal = () => {
             setModalVisible(true);
         }
-        console.log("En especie, area: ", area);
+        //console.log("En especie, area: ", area);
         
     return(
         <>

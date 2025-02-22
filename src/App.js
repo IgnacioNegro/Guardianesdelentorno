@@ -30,7 +30,7 @@ function App() {
       );
 
       const data = await response.json();
-      console.log(data.items[0]);
+      //console.log(data.items[0]);
       setArrayAreasNaturales(data.items);
     }
 
@@ -46,12 +46,9 @@ function App() {
         }
       );
 
-      const data = await response.json();
-      console.log("Especes")
-      console.log(data.items[0]);
+      const data = await response.json();      
       setArrayEspecies(data.items);
     };
-
 
     cargarAreas();
     cargarEspecies();
