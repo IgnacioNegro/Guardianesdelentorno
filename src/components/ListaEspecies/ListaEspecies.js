@@ -23,4 +23,4 @@ const ListaEspecies = ({arrayEspecies, arrayAreasNaturales}) => {
     )
 }
 
-export default ListaEspecies();
+export default ListaEspecies;
