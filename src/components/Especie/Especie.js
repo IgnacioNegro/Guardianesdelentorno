@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import './Especie.css';
 import EspecieModal from '../EspecieModal/EspecieModal';
 
-const Especie = ({especie}) => {
+const Especie = ({especie, area}) => {
 
         const[modalVisible, setModalVisible] = useState(false);        
     
         const handleClickModal = () => {
             setModalVisible(true);
         }
+        console.log("En especie, area: ", area);
         
     return(
         <>
@@ -23,7 +24,7 @@ const Especie = ({especie}) => {
                     <p>Estado: {especie.conservationStatus}</p>
                 </div>           
             </div>
-            {modalVisible && (<EspecieModal especie={especie} closeModal={() => setModalVisible(false)}/>)} 
+            {modalVisible && (<EspecieModal especie={especie} area={area} closeModal={() => setModalVisible(false)}/>)} 
         </>
     )
 }

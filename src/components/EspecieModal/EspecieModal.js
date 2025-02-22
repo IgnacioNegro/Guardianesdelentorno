@@ -1,7 +1,7 @@
 import './EspecieModal.css';
 
-const EspecieModal = ({ closeModal, especie }) => {
-    console.log(closeModal);
+const EspecieModal = ({ closeModal, especie, area }) => {
+    console.log(area);
     return (
         <>
             <div className='register-container'>
@@ -16,7 +16,7 @@ const EspecieModal = ({ closeModal, especie }) => {
                     <p>Nombre Cientifico: {especie.scientificName}</p>
                     <p>Categoria: {especie.category}</p>                    
                     <p>Estado: {especie.conservationStatus}</p>
-                    <p>Area Avistada: {especie.naturalAreaId}</p>
+                    <p>Area Avistada: {area ? area.name : "No hay areas asociadas a esta especia"}</p>
                     </div>
                     <div className="form-group">
                         <p>Estado de conservación: {especie.conservationStatus}</p>
