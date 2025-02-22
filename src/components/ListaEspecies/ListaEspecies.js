@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import './ListaEspecies.css';
 import Especie from '../Especie/Especie';
-
+import BotonCrearEspecie from '../Crear Especie/BotonCrearEspecie.js';
 
 const ListaEspecies = () => {
     const [arrayEspecies, setArrayEspecies] = useState([]);
@@ -35,6 +35,7 @@ const ListaEspecies = () => {
     return (
         <div className='areas-especies-container container mb-5'>
             <h1 className='text-center mt-5'>Lista Especies</h1>
+            <BotonCrearEspecie />
             {                
                 arrayEspecies.map(especie => <Especie key={especie.id} especie={especie}/>)
             }
