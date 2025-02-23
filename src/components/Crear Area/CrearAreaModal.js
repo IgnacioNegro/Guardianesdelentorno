@@ -21,8 +21,9 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
     const user = useSelector((state) => state.user);
     //console.log("Crear Area: ", user);
 
-    const InsertarAreaNatural = async () => {
-
+    const InsertarAreaNatural = async (event) => {
+        event.preventDefault();
+        
         const area = {
             "userId": user.id,
             "naturalArea": {
@@ -46,7 +47,7 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
         )
         const data = await insert.json();
         setresultData(data);
-        console.log(resultData);
+        console.log(data);
 
     }
 
@@ -55,11 +56,12 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
             <form onSubmit={InsertarAreaNatural}>
                 <div className='register-container'>
                     <div className='form-register'>
-                        <button className='modal-close' onClick={closeModal}>✖</button>
+                        <button className='modal-close' onClick={closeModal}>✖</button>                        
 
                         <div className="form-group">
                             <h3>Crear área natural</h3>
                         </div>
+                        {resultData.result && <p>Area Natural Creada con Exito</p>}
                         <div className="form-group">
                             <label htmlFor="name">Nombre</label>
                             <input type="text" className="form-control" id="name" aria-describedby="name" placeholder="Parque Nacional Oro y Carbon" required
