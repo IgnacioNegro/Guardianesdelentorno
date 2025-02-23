@@ -3,7 +3,9 @@
     background-color: antiquewhite;
     border-radius: 10px;
     padding: 10px;
+    cursor: pointer;
 }
+
 
 .thumbnail {
     width: 80px;
