@@ -6,7 +6,7 @@ const ListaEspecies = ({arrayEspecies, arrayAreasNaturales}) => {
     //console.log("Lista Especies: ", arrayAreasNaturales)
 
     return (
-        <div className='areas-especies-container container mb-5'>
+        <div className='areas-especies-container container mb-5' id='listado-especies'>
             <h1 className='text-center mt-5'>Lista Especies</h1>
             {  
    

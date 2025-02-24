@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import './CrearAreaModal.css';
 import { useSelector } from 'react-redux';
 
-const CrearAreaModal = ({ closeModal/* , area */ }) => {
-    /* const [name, setName] = useState(area.name || '');    
-    const [region, setRegion] = useState(area.region || '');
-    const [description, setDescription] = useState(area.description || '');
-    const [imageUrl, setImageUrl] = useState(area.imageUrl || ''); */
-    //const [mapLocation, setMapLocation] = useState(area.mapLocation || '');
+const CrearAreaModal = ({ closeModal }) => {
 
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
@@ -19,7 +14,6 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
     const [resultData, setresultData] = useState(null);
 
     const user = useSelector((state) => state.user);
-    //console.log("Crear Area: ", user);
 
     const InsertarAreaNatural = async (event) => {
         event.preventDefault();
@@ -47,7 +41,6 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
         )
         const data = await insert.json();
         setresultData(data);
-        console.log(data);
 
         if (insert.ok) {
             setresultData(true);

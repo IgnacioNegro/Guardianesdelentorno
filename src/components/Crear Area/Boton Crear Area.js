@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import CrearAreaModal from './CrearAreaModal.js';
 
-
-
 const BotonCrearArea = () => {
-    const [mostrarModal, setMostrarModal] = useState(false);
-    console.log("boton crear area")
+    const [mostrarModal, setMostrarModal] = useState(false);    
 
     return (
         <>
@@ -13,7 +10,7 @@ const BotonCrearArea = () => {
                 Crear Área
             </button>
             {mostrarModal && (
-                <CrearAreaModal closeModal={() => setMostrarModal(false)} /* area={{}} */ />
+                <CrearAreaModal closeModal={() => setMostrarModal(false)} />
             )}            
         </>
     );

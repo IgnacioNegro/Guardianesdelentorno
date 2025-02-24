@@ -9,7 +9,7 @@ const ListaAreas = ({arrayAreasNaturales, arrayEspecies}) => {
     //console.log("especiesAvistadas en lista areas: ", arrayEspecies);
 
     return (
-        <div className='areas-especies-container container mb-5'>
+        <div className='areas-especies-container container mb-5' id='listado-areas-naturales'>
             <h1 className='text-center mt-5'>Lista Areas Naturales</h1>
             {user ? <BotonCrearArea /> : <></>}
             

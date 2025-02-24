@@ -8,7 +8,6 @@ const AreaNaturalModal = ({ closeModal, area, especiesAvistadas }) => {
             <div className='register-container'>
                 <div className='form-register'>
                     <button className='modal-close' onClick={closeModal}>✖</button>
-
                     <div className="form-group">
                         <img></img>
 
