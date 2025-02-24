@@ -59,7 +59,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <ListaAreas arrayAreasNaturales={arrayAreasNaturales}/>
+      <ListaAreas arrayAreasNaturales={arrayAreasNaturales} arrayEspecies={arrayEspecies}/>
       <ListaEspecies arrayEspecies={arrayEspecies} arrayAreasNaturales={arrayAreasNaturales}/>
     </>
 

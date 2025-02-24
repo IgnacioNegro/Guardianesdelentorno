@@ -16,7 +16,7 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
     const [description, setDescription] = useState('');
     const [conservationStatus, setConservationStatus] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-    const [resultData, setresultData] = useState('null');
+    const [resultData, setresultData] = useState(null);
 
     const user = useSelector((state) => state.user);
     //console.log("Crear Area: ", user);
@@ -49,6 +49,12 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
         setresultData(data);
         console.log(data);
 
+        if (insert.ok) {
+            setresultData(true);
+        }else {
+            setresultData(false);
+        }
+
     }
 
     return (
@@ -61,7 +67,10 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
                         <div className="form-group">
                             <h3>Crear área natural</h3>
                         </div>
-                        {resultData.result && <p>Area Natural Creada con Exito</p>}
+                        {resultData != null && (
+                            resultData
+                              ? <p class="text-success"><strong>Area Natural Creada con Exito</strong></p> 
+                              : <p class="text-danger">No se pudo crear el area</p>)}
                         <div className="form-group">
                             <label htmlFor="name">Nombre</label>
                             <input type="text" className="form-control" id="name" aria-describedby="name" placeholder="Parque Nacional Oro y Carbon" required
@@ -106,7 +115,7 @@ const CrearAreaModal = ({ closeModal/* , area */ }) => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="imageUrl">Imagen</label>
-                            <input type="text" className="form-control" id="imageUrl" aria-describedby="imageUrl" placeholder="Enter Image URL" required
+                            <input type="url" className="form-control" id="imageUrl" aria-describedby="imageUrl" placeholder="https://www.geaconsultores.com/wp-content/uploads/2018/01/CAP.jpg" required
                                 value={imageUrl}
                                 onChange={e => setImageUrl(e.target.value)}
                             />

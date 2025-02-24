@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './AreaNatural.css';
 import AreaNaturalModal from '../AreaNaturalModal/AreaNaturalModal';
 
-const AreaNatural = ({area}) => {
+const AreaNatural = ({area, especiesAvistadas}) => {
 
         const[modalVisible, setModalVisible] = useState(false);        
     
@@ -23,7 +23,7 @@ const AreaNatural = ({area}) => {
                     <p>Estado: {area.conservationStatus}</p>
                 </div>           
             </div>
-            {modalVisible && (<AreaNaturalModal area={area} closeModal={() => setModalVisible(false)}/>)} 
+            {modalVisible && (<AreaNaturalModal area={area} especiesAvistadas={especiesAvistadas} closeModal={() => setModalVisible(false)}/>)} 
         </>
     )
 }
