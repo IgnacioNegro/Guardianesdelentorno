@@ -1,13 +1,22 @@
-import React from 'react';
-import CrearEspecieModal from './CrearEspecieModal';
+import React, { useState } from 'react';
+import CrearEspecieModal from './CrearEspecieModal.js';
 
-const BotonCrearEspecie = ({ onClick }) => {
+const BotonCrearEspecie = (arrayAreasNaturales) => {
+    const [mostrarModal, setMostrarModal] = useState(false);
+    console.log("Boton Crear Especie")
+
     return (
-        <button class="btn btn-primary" onClick={CrearEspecieModal}>
-            Crear Especie
-        </button>
+        <>
+            <button className="btn btn-primary" onClick={() => setMostrarModal(true)}>
+                Crear Especie
+            </button>
+            {mostrarModal && (
+                <CrearEspecieModal closeModal={() => setMostrarModal(false)}
+                arrayAreasNaturales={arrayAreasNaturales} /* area={{}} */ />
+            )}            
+        </>
     );
 };
 
-
 export default BotonCrearEspecie;
+
