@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+/* import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     arrayAreasNaturales: [],
@@ -19,4 +19,4 @@ const initialState = {
   });
   
   export const { setAreas, setEspecies } = dataSlice.actions;
-  export default dataSlice.reducer;
+  export default dataSlice.reducer; */

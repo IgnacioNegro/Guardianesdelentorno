@@ -24,12 +24,14 @@ const AreaNaturalModal = ({ closeModal, area, especiesAvistadas }) => {
                                 <>
                                     <h5 className="mt-2">Especies Avistadas en la zona</h5>
                                     <ul>                                    
-                                        {especiesAvistadas.map((especie, index) =>(
-                                            <li key={index} className="mb-1"> 
-                                                <p className="mb-1">{especie.commonName}</p>
-                                            </li>
-                                            
-                                        ))}                                     
+                                        {
+                                            especiesAvistadas.map((especie, index) =>(
+                                                <li key={index} className="mb-1"> 
+                                                    <p className="mb-1">{especie.commonName}</p>
+                                                </li>
+                                                
+                                            ))
+                                        }                                     
                                     </ul>
                                 </>
                                 

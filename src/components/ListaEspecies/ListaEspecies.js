@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const ListaEspecies = ({arrayEspecies, arrayAreasNaturales}) => {    
     const user = useSelector((state) => state.user);
-    //console.log("Lista Especies: ", arrayAreasNaturales)
+    console.log( "lista especie: ", Array.isArray(arrayAreasNaturales));
 
     return (
         <div className='areas-especies-container container mb-5' id='listado-especies'>
