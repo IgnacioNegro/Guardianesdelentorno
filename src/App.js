@@ -8,7 +8,7 @@ import ListaEspecies from './components/ListaEspecies/ListaEspecies';
 
 function App() {
   const user = useSelector((state) => state.user);
-  //console.log(user)
+
 
   // Centralizamos los Fetch aca para solucionar el tema de que Especie necesita recibir tambien Are
 
