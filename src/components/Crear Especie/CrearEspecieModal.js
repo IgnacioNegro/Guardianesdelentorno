@@ -77,21 +77,21 @@ const CrearEspecieModal = ({ closeModal, arrayAreasNaturales }) => {
 
                         <div className='form-group'>
                             <label htmlFor='name'>Nombre Cientifico</label>
-                            <input type='text' className='form-control' id='scientificName' aria-describedby="ScrientificName" placeholder="Nombre Cientifico de la especie" required
+                            <input type='text' className='form-control' id='scientificName' aria-describedby="ScrientificName" placeholder="Bolso tiburonikus Gloriosus" required
                                 value={scientificName}
                                 onChange={e => setScientificName(e.target.value)} />
                         </div>
 
                         <div className='form-group'>
                             <label htmlFor='category'>Categoria</label>
-                            <input type='text' className='form-control' id='category' aria-describedby="category" placeholder="Mamifero" required
+                            <input type='text' className='form-control' id='category' aria-describedby="category" placeholder="Carnivoro" required
                                 value={category}
                                 onChange={e => setCategory(e.target.value)} />
                         </div>
 
                         <div className='form-group'>
                             <label htmlFor='conservationStatus'>Estado de Conservacion</label>
-                            <input type='text' className='form-control' id='conservationStatus' aria-describedby="conservationStatus" placeholder="En peligro" required
+                            <input type='text' className='form-control' id='conservationStatus' aria-describedby="conservationStatus" placeholder="Normal" required
                                 value={conservationStatus}
                                 onChange={e => setConservationStatus(e.target.value)} />
                         </div>
