@@ -14,7 +14,6 @@ const Login = ({closeModal}) => {
     const dispatch = useDispatch();
 
     const Loguearse = async (event) => {
-        console.log("entra al log usuario")
         event.preventDefault();         
 
         const consulta = await fetch('https://mammal-excited-tarpon.ngrok-free.app/api/user/login?secret=TallerReact2025!', {
@@ -28,9 +27,7 @@ const Login = ({closeModal}) => {
         const data = await consulta.json();
         setResultData(data);
         dispatch(setUser(data.user));
-
-        console.log(data.isValid);
-
+ 
     }
 
     return (

@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import './EspecieModal.css';
+import "./ActividadModal.css";
 
-const EspecieModal = ({ closeModal, especie, area }) => {
-  const [comments, setComments] = useState([]); // Comentarios de la especie
-  const [especieRating, setEspecieRating] = useState(0); // Calificación de la especie
-  const [newComment, setNewComment] = useState(""); // Comentario del usuario
+const ActividadModal = ({ closeModal, actividad, area }) => {
+  const [comments, setComments] = useState([]);
+  const [actividadRating, setActividadRating] = useState(0);
+  const [newComment, setNewComment] = useState("");
   const user = useSelector((state) => state.user);
 
-  // Obtener comentarios al montar el modal
   useEffect(() => {
     fetchComments();
-  }, [especie]);
+  }, [actividad]);
 
   const fetchComments = async () => {
     try {
       const response = await fetch(
-        `https://mammal-excited-tarpon.ngrok-free.app/api/comment/byEntityId?secret=TallerReact2025!&userId=123&speciesId=${especie.id}&page=1&pageSize=10`
+        `https://mammal-excited-tarpon.ngrok-free.app/api/comment/byEntityId?secret=TallerReact2025!&userId=123&activityId=${actividad.id}&page=1&pageSize=10`
       );
       const data = await response.json();
       setComments(data.items || []);
@@ -26,8 +25,8 @@ const EspecieModal = ({ closeModal, especie, area }) => {
     }
   };
 
-  const addEspecieRating = async () => {
-    if (especieRating < 1 || especieRating > 5) {
+  const addActividadRating = async () => {
+    if (actividadRating < 1 || actividadRating > 5) {
       alert("La calificación debe estar entre 1 y 5.");
       return;
     }
@@ -42,9 +41,9 @@ const EspecieModal = ({ closeModal, especie, area }) => {
             comment: {
               userId: user?.id,
               naturalAreaId: area.id,
-              speciesId: especie.id, // Asocias la calificación a la especie
-              text: "Calificación de la especie",  // Texto fijo de calificación
-              rating: Number(especieRating),   // La calificación de la especie
+              activityId: actividad.id, 
+              text: "Calificación de la actividad",
+              rating: Number(actividadRating),
             },
           }),
         }
@@ -52,7 +51,7 @@ const EspecieModal = ({ closeModal, especie, area }) => {
 
       if (response.ok) {
         alert("Calificación agregada exitosamente.");
-        fetchComments();  // Refrescar comentarios después de agregar la calificación
+        fetchComments();
       } else {
         console.error("Error al agregar la calificación.");
       }
@@ -77,9 +76,9 @@ const EspecieModal = ({ closeModal, especie, area }) => {
             comment: {
               userId: user?.id,
               naturalAreaId: area.id,
-              speciesId: especie.id,  // Asociamos el comentario a la especie
-              text: newComment,  // El comentario ingresado por el usuario
-              rating: null,  // No es necesario incluir calificación aquí
+              activityId: actividad.id,
+              text: newComment,
+              rating: null,
             },
           }),
         }
@@ -87,8 +86,8 @@ const EspecieModal = ({ closeModal, especie, area }) => {
 
       if (response.ok) {
         alert("Comentario agregado exitosamente.");
-        setNewComment("");  // Limpiar el campo de comentario después de agregar
-        fetchComments();  // Refrescar los comentarios
+        setNewComment("");
+        fetchComments();
       } else {
         console.error("Error al agregar el comentario.");
       }
@@ -103,11 +102,10 @@ const EspecieModal = ({ closeModal, especie, area }) => {
         <button className='modal-close' onClick={closeModal}>✖</button>
 
         <div className="form-group">
-          <p>Nombre: {especie.commonName}</p>
-          <p>Nombre Cientifico: {especie.scientificName}</p>
-          <p>Categoria: {especie.category}</p>
-          <p>Estado: {especie.conservationStatus}</p>
-          <p>Área Avistada: {area ? area.name : "No hay áreas asociadas a esta especie"}</p>
+          <p><strong>Actividad:</strong> {actividad.title}</p>
+          <p><strong>Fecha:</strong> {actividad.date}</p>
+          <p><strong>Descripción:</strong> {actividad.description}</p>
+          <p><strong>Área Natural:</strong> {area ? area.name : "No hay área asociada a esta actividad"}</p>
         </div>
 
         <h5>Comentarios</h5>
@@ -129,18 +127,18 @@ const EspecieModal = ({ closeModal, especie, area }) => {
         />
         <button onClick={addComment}>Enviar Comentario</button>
 
-        <h5>Calificar Especie</h5>
+        <h5>Calificar Actividad</h5>
         <input
           type="number"
-          value={especieRating}
-          onChange={(e) => setEspecieRating(e.target.value)}
+          value={actividadRating}
+          onChange={(e) => setActividadRating(e.target.value)}
           min="1"
           max="5"
         />
-        <button onClick={addEspecieRating}>Enviar Calificación</button>
+        <button onClick={addActividadRating}>Enviar Calificación</button>
       </div>
     </div>
   );
 };
 
-export default EspecieModal;
+export default ActividadModal;
