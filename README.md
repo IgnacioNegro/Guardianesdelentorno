@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+ Proyecto “Guardianes del Entorno”
+Este proyecto corresponde a la asignatura Taller Front-End 2025 y consiste en el desarrollo de un prototipo para el website "Guardianes del Entorno", una plataforma web orientada a la conservación ambiental. La aplicación tiene como objetivo permitir a los usuarios registrados compartir, registrar y consultar información sobre áreas naturales protegidas, especies avistadas y actividades de cuidado ambiental.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Objetivo
+El objetivo principal de este trabajo práctico es aplicar los conceptos de desarrollo front-end vistos en clase, utilizando tecnologías como React y Redux (opcional). La plataforma se conecta con una API REST proporcionada por el equipo docente, que facilita la consulta y persistencia de los datos.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Funcionalidades Principales
+Registro e Inicio de sesión: Los usuarios podrán registrarse e iniciar sesión para acceder a funcionalidades adicionales.
+Listados de Áreas y Especies: Los usuarios podrán visualizar listas de áreas naturales y especies avistadas con opciones de filtro en tiempo real.
+Visualización detallada: Cada área natural tendrá su propia página con descripción, imágenes, ubicación en un mapa y especies asociadas.
+Carga de nuevos datos: Los usuarios autenticados podrán agregar nuevas áreas naturales, especies y actividades de conservación.
+Perfil de usuario: Los usuarios podrán consultar su propio perfil, que incluirá las áreas, especies y actividades registradas, además de poder ver los perfiles de otros usuarios.
+Comentarios y puntuaciones: Los usuarios podrán dejar comentarios opcionales y puntuaciones (de 1 a 5 estrellas) en las páginas de áreas y especies.
+Requerimientos No Funcionales
+Tecnologías: React (y opcionalmente Redux) para el desarrollo de la interfaz de usuario, y conexión con la API REST proporcionada.
+Entorno de desarrollo: Visual Studio Code.
+Buenas prácticas: La aplicación está desarrollada siguiendo las buenas prácticas aprendidas en clase, como la división en componentes, manejo eficiente del estado y el uso de bibliotecas recomendadas.
+Recursos adicionales
+Este repositorio contiene el código fuente completo del proyecto y la documentación necesaria para facilitar su comprensión y uso.
